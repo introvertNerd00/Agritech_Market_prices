@@ -27,6 +27,7 @@ combined_data.columns = new_column_names
 string_to_remove = "   View Graph"
 combined_data['City'] = combined_data['City'].str.replace(string_to_remove, '', regex=False)
 combined_data["Price"].fillna('N/A', inplace=True)
+combined_data.sort_values(by=['City', 'Date'], inplace=True)
+print(combined_data, combined_data.dtypes)
 
-print(combined_data)
 
